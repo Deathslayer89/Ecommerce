@@ -8,7 +8,6 @@ import { runFireworks } from '../lib/fireworks';
 
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useAppContext();
-  
   useEffect(() => {
     localStorage.clear();
     setCartItems([]);

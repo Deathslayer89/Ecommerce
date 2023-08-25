@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 import { client, urlFor } from '../../lib/client';
@@ -22,11 +23,12 @@ const ProductDetails = ({ product, products }) => {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img src={urlFor(image && image[index])} className="product-detail-image" />
+            <Image src={urlFor(image && image[index])} alt='product' className="product-detail-image" />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
-              <img 
+              <Image 
+                alt='product'
                 key={i}
                 src={urlFor(item)}
                 className={i === index ? 'small-image selected-image' : 'small-image'}
